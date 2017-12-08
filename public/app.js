@@ -1,6 +1,31 @@
 var app = function(){
   var url = "http://hp-api.herokuapp.com/api/characters"
   makeRequest(url, requestComplete);
+
+  var canvas = document.getElementById('main-canvas');
+  var context = canvas.getContext('2d')
+
+
+
+function drawFeet(x, y) {
+  context.beginPath();
+  context.arc(x, y, 2, 0, Math.PI * 2, true);
+  context.stroke();
+}
+
+
+
+canvas.addEventListener("mousemove", function(){
+  // drawFeet(event.layerX, event.layerY)
+  // var img = new Image();
+  // img.src = "footprints.png";
+  // img.classList.add("footprint")
+  // // context.drawImage(img, 0, 2, event.layerX, event.layerY)
+  // context.drawImage(img, 0, 2, event.x, event.y)
+
+  drawFeet(event.layerX, event.layerY)
+});
+
 }
 
 var makeRequest = function(url, callback){
