@@ -1,0 +1,10 @@
+img {
+  width: 250px;
+  height: 400px;
+}
+
+canvas {
+  background-image: url('map.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
