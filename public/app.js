@@ -14,64 +14,35 @@ var requestComplete = function(){
   if(this.status !== 200) return;
   var jsonString = this.responseText;
   var students = JSON.parse(jsonString);
-  populateSelectGryffindor(students);
-  populateSelectHufflepuff(students);
-  populateSelectSytherin(students);
-  populateSelectRavenclaw(students);
+  populateSelect(students);
+
 }
 
 
-var populateSelectGryffindor = function(students){
-  var select = document.getElementById('gryffindor-select');
-  for(var i = 0; i < students.length; i++){
-    var student = students[i];
-    if(student.house === "Gryffindor"){
-      var option = document.createElement('option');
-      option.innerText = student.name;
-      option.value = i;
-      select.appendChild(option)
-    }
-  }
+var populateSelect = function(students){
+  var select = document.getElementById('students-select');
+  students.forEach(function(student){
+    var option = document.createElement('option');
+    option.innerText = student.name;
+    select.appendChild(option)
+  })
+selectChanged(select.selectedIndex, students);
+select.addEventListener('change', function(){
+  selectChanged(select.selectedIndex, students);
+}.bind(this));
 }
 
-var populateSelectHufflepuff = function(students){
-  var select = document.getElementById('hufflepuff-select');
-  for(var i = 0; i < students.length; i++){
-    var student = students[i];
-    if(student.house === "Hufflepuff"){
-      var option = document.createElement('option');
-      option.innerText = student.name;
-      option.value = i;
-      select.appendChild(option)
-    }
-  }
+
+var selectChanged = function(index, students){
+  var studentName = document.getElementById('student-name')
+  var student = students[index];
+  studentName.innerText = student.name
 }
 
-var populateSelectSytherin = function(students){
-  var select = document.getElementById('slytherin-select');
-  for(var i = 0; i < students.length; i++){
-    var student = students[i];
-    if(student.house === "Slytherin"){
-      var option = document.createElement('option');
-      option.innerText = student.name;
-      option.value = i;
-      select.appendChild(option)
-    }
-  }
-}
 
-var populateSelectRavenclaw= function(students){
-  var select = document.getElementById('ravenclaw-select');
-  for(var i = 0; i < students.length; i++){
-    var student = students[i];
-    if(student.house === "Ravenclaw"){
-      var option = document.createElement('option');
-      option.innerText = student.name;
-      option.value = i;
-      select.appendChild(option)
-    }
-  }
-}
+
+
+
 
 
 
