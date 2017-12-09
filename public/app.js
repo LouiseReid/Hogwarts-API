@@ -2,21 +2,23 @@ var app = function(){
   var url = "http://hp-api.herokuapp.com/api/characters"
   makeRequest(url, requestComplete);
 
-  var canvas = document.getElementById('main-canvas');
-  var context = canvas.getContext('2d')
+  var mapCanvas = document.getElementById('map-canvas');
+  var context = mapCanvas.getContext('2d')
 
   function drawFeet(x,y){
-    context.clearRect(0, 0, canvas.width, canvas.height);
+    context.clearRect(0, 0, mapCanvas.width, mapCanvas.height);
     context.beginPath();
     context.arc(x, y, 3, 0, 2 * Math.PI, true);
     context.arc(x-5, y-5, 3, 0, 2 * Math.PI, true);
     context.fill();
   }
 
-
-  canvas.addEventListener("mousemove", function(){
+  mapCanvas.addEventListener("mousemove", function(){
     drawFeet(event.layerX, event.layerY)
   });
+
+  var demCanvas = document.getElementById('dementor-canvas')
+  var demContext = demCanvas.getContext('2d')
 
 }
 

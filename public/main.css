@@ -13,13 +13,16 @@ img {
 
 }
 
-canvas {
+#map-canvas {
   background-image: url('map.png');
   background-size: contain;
   background-repeat: no-repeat;
   cursor: none;
   box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+}
 
+#dementor-canvas{
+  background-color: rgba(51, 21, 1, 0.1);
 }
 
 #student {
@@ -34,6 +37,10 @@ canvas {
   font-size: 25px;
 }
 
+#student-wand{
+font-size: 35px;
+}
+
 #images {
   display: inline-block;
 }
@@ -43,9 +50,9 @@ canvas {
   margin-left: -300px;
 }
 
-#marauders-map{
+#canvases{
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   padding: 50px;
 }
 
@@ -54,6 +61,10 @@ h1 {
   text-align: center;
   font-size: 65px;
   color: white;
+}
+
+h3 {
+  font-size: 35px;
 }
 
 h4 {
@@ -67,4 +78,9 @@ select {
   height: 40px;
   overflow: hidden;
   width: 240px;
+}
+
+
+li {
+  list-style: none;
 }
