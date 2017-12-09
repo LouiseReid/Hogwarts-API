@@ -19,6 +19,7 @@ var app = function(){
 
   var demCanvas = document.getElementById('dementor-canvas')
   var demContext = demCanvas.getContext('2d')
+  demCanvas.width = document.body.clientWidth
 
   var dementor = document.createElement('img')
   dementor.src = 'dementor.png'
