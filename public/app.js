@@ -5,13 +5,11 @@ var app = function(){
   var canvas = document.getElementById('main-canvas');
   var context = canvas.getContext('2d')
 
-
-
   function drawFeet(x,y){
     context.clearRect(0, 0, canvas.width, canvas.height);
     context.beginPath();
-    context.arc(x, y, 5, 0, 2 * Math.PI, true);
-    context.arc(x-5, y-5, 5, 0, 2 * Math.PI, true);
+    context.arc(x, y, 3, 0, 2 * Math.PI, true);
+    context.arc(x-5, y-5, 3, 0, 2 * Math.PI, true);
     context.fill();
   }
 
@@ -21,7 +19,6 @@ var app = function(){
   });
 
 }
-
 
 
 var makeRequest = function(url, callback){
