@@ -1,14 +1,51 @@
+html {
+}
+
+body {
+  background-image: url('wallpaper.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
 img {
   width: 250px;
   height: 400px;
+  box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+
 }
 
 canvas {
   background-image: url('map.png');
   background-size: contain;
   background-repeat: no-repeat;
+  cursor: none;
+  box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+
 }
 
-.footprint {
-  size: 10%;
+#student {
+  display: flex;
+  justify-content: space-around;
+}
+
+#student-text-info{
+  text-align: left;
+}
+
+#images {
+  display: inline-block;
+}
+
+#student-picture{
+  margin-right: 50px;
+}
+
+#marauders-map{
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+}
+
+header {
+  /*background-color: red;*/
 }

@@ -7,21 +7,18 @@ var app = function(){
 
 
 
-
-function drawFeet(x,y){
+  function drawFeet(x,y){
     context.clearRect(0, 0, canvas.width, canvas.height);
-
     context.beginPath();
     context.arc(x, y, 5, 0, 2 * Math.PI, true);
     context.arc(x-5, y-5, 5, 0, 2 * Math.PI, true);
     context.fill();
-}
+  }
 
 
-canvas.addEventListener("mousemove", function(){
-  drawFeet(event.layerX, event.layerY)
-
-});
+  canvas.addEventListener("mousemove", function(){
+    drawFeet(event.layerX, event.layerY)
+  });
 
 }
 
