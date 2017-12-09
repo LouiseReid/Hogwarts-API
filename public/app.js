@@ -24,8 +24,8 @@ var app = function(){
   dementor.src = 'dementor.png'
 
   demCanvas.addEventListener("mousemove", function(){
-    demContext.clearRect(0, 0, mapCanvas.width, mapCanvas.height);
-    demContext.drawImage(dementor, event.layerX, event.layerY, 400, 600)
+    demContext.clearRect(0, 0, demCanvas.width, demCanvas.height);
+    demContext.drawImage(dementor, event.layerX, event.layerY, 100, 150)
   });
 
 }
