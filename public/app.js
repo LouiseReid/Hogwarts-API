@@ -7,26 +7,25 @@ var app = function(){
 
 
 
-function drawFeet(x, y) {
-  context.beginPath();
-  context.arc(x, y, 2, 0, Math.PI * 2, true);
-  context.stroke();
-}
 
+function drawFeet(x,y){
+    context.clearRect(0, 0, canvas.width, canvas.height);
+
+    context.beginPath();
+    context.arc(x, y, 5, 0, 2 * Math.PI, true);
+    context.arc(x-5, y-5, 5, 0, 2 * Math.PI, true);
+    context.fill();
+}
 
 
 canvas.addEventListener("mousemove", function(){
-  // drawFeet(event.layerX, event.layerY)
-  // var img = new Image();
-  // img.src = "footprints.png";
-  // img.classList.add("footprint")
-  // // context.drawImage(img, 0, 2, event.layerX, event.layerY)
-  // context.drawImage(img, 0, 2, event.x, event.y)
-
   drawFeet(event.layerX, event.layerY)
+
 });
 
 }
+
+
 
 var makeRequest = function(url, callback){
   var request = new XMLHttpRequest();
