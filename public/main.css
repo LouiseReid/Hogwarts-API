@@ -23,6 +23,7 @@ img {
 
 #dementor-canvas{
   background-color: rgba(51, 21, 1, 0.1);
+  cursor: none;
 }
 
 #student {
@@ -43,6 +44,7 @@ font-size: 35px;
 
 #images {
   display: inline-block;
+  height: 500px;
 }
 
 #student-picture{

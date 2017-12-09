@@ -20,6 +20,14 @@ var app = function(){
   var demCanvas = document.getElementById('dementor-canvas')
   var demContext = demCanvas.getContext('2d')
 
+  var dementor = document.createElement('img')
+  dementor.src = 'dementor.png'
+
+  demCanvas.addEventListener("mousemove", function(){
+    demContext.clearRect(0, 0, mapCanvas.width, mapCanvas.height);
+    demContext.drawImage(dementor, event.layerX, event.layerY, 400, 600)
+  });
+
 }
 
 
