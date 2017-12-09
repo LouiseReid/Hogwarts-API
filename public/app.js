@@ -58,7 +58,6 @@ var selectChanged = function(index, students){
   var studentName = document.getElementById('student-name')
   var studentDOB = document.getElementById('student-dob')
   var studentAncestry = document.getElementById('student-ancestry')
-  var studentStatus = document.getElementById('student-status')
   var studentWand = document.getElementById('student-wand')
   var wandWood = document.getElementById('wand-wood')
   var wandCore = document.getElementById('wand-core')
@@ -71,7 +70,6 @@ var selectChanged = function(index, students){
   studentName.innerText = student.name
   studentDOB.innerText = "DOB: " + student.dateOfBirth
   studentAncestry.innerText = student.ancestry
-  studentStatus.innerText = "Current student: " + student.hogwartsStudent
   studentWand.innerText = "Wand:"
   wandWood.innerText = "Wood: " + student.wand.wood
   wandCore.innerText = "Core: " + student.wand.core
@@ -84,15 +82,39 @@ var selectChanged = function(index, students){
 
   if(student.house === "Gryffindor"){
     houseLogo.src = "gryffindor.png"
+    houseLogo.addEventListener('mouseenter', function(){
+      houseLogo.src = "gryfGhost.gif"
+      houseLogo.addEventListener('mouseleave', function(){
+        houseLogo.src = "gryffindor.png"
+      })
+    })
   }
   if(student.house === "Slytherin"){
     houseLogo.src = "slytherin.png"
+    houseLogo.addEventListener('mouseenter', function(){
+      houseLogo.src = "slythGhost.gif"
+      houseLogo.addEventListener('mouseleave', function(){
+        houseLogo.src = "slytherin.png"
+      })
+    })
   }
   if(student.house === "Ravenclaw"){
     houseLogo.src = "ravenclaw.png"
+    houseLogo.addEventListener('mouseenter', function(){
+      houseLogo.src = "raveGhost.gif"
+      houseLogo.addEventListener('mouseleave', function(){
+        houseLogo.src = "ravenclaw.png"
+      })
+    })
   }
   if(student.house === "Hufflepuff"){
     houseLogo.src = "hufflepuff.png"
+    houseLogo.addEventListener('mouseenter', function(){
+      houseLogo.src = "huffGhost.gif"
+      houseLogo.addEventListener('mouseleave', function(){
+        houseLogo.src = "hufflepuff.png"
+      })
+    })
   }
 
 }
